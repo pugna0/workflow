@@ -1,5 +1,4 @@
 ---
-layout: post
 title: gitflow and continuous integration
 categories: gitflow ci devops
 image: gitflow-mode.png
@@ -31,8 +30,7 @@ author: Pugna0
 
 ## **gitflow 工作流程**
 gitflow是基于git的众多工作流程之一。
-{% capture imagePath %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}/{{ page.image }}{% endcapture %}
-  ![{{ page.title | slugify }}](/developers/assets/images/{{ imagePath }}){:class="img-responsive"}
+![mode](https://github.com/pugna0/workflow/blob/master/imgs/gitflow-mode.png)
 
 The main branches:
 - master master分支应该总是处于production-ready状态。
@@ -80,8 +78,7 @@ git flow feature publish new-feature
 ```
 此时会把本地new-feature分支推送到远端仓库。
 然后，提交pr：
-{% capture imagePath %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}/{{ page.image-pr }}{% endcapture %}
-  ![{{ page.title | slugify }}](/developers/assets/images/{{ imagePath }}){:class="img-responsive"}
+![pr](https://github.com/pugna0/workflow/blob/master/imgs/demo-pr.png)
 
 基于此时的development分支，开出新的release分支：
 大致流程同feature类似，测试环境测试，无问题准备上线时，提交pr到master，并标记tag:
@@ -137,8 +134,7 @@ publish:
 
 根据自己项目的需求设置好gitlab-ci job的工作流程。[参考文档](https://docs.gitlab.com/ee/ci/yaml/README.html)
 然后对于符合要求的代码提交，就会自动触发pipeline的构建过程：
-{% capture imagePath %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}/{{ page.image-ppl }}{% endcapture %}
-  ![{{ page.title | slugify }}](/developers/assets/images/{{ imagePath }}){:class="img-responsive"}
+![pipeline](https://github.com/pugna0/workflow/blob/master/imgs/pipeline-demo.png)
     在此可以看到构建的全部过程日志。
 
 ### 参考
